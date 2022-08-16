@@ -1,47 +1,48 @@
-import React, { useEffect, useState } from "react";
 
+import React, {Component} from "react";
 
+export default class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      showUsersList: true,
+      users: []
+    }
+  }
+  
+  checker = () => {
+    this.setState({showUsersList: true})
+    this.setState({users: greatUsers})
+    console.log(this.state.showUsersList)
+  }
 
+  removeRandomeUser = () => {
+      this.setState( (sum) => {
+        console.log(greatUsers.name,'died'  )
+        const randomIndex = Math.floor(Math.random() * sum.users.length)
+        const usersArray = sum.users.filter((_, index)=> index !== randomIndex)
+        return {users: usersArray }
+      })
+  }
 
-function App() {
- const[x, setX] = useState(0)
- 
- useEffect(() => {
-  setX(generateUsers(users))
-},[users.length])
-
-// let btn = document.getElementById("change-title");
-// btn.addEventListener("click", () => {
-//   document.title ="new title"
-// })
-
-// ↑ ეს ვცადე title შესაცვლელად მაგრამ ვერ ავამუშავე :( 
-
-const removeName = () => {
-  setX(getRandomItems(users))
-}  
- 
-
-  return (
-    <div className="App">
-      
-     
-      
-      <div>{x}</div>
-      <button className='remo' onClick={removeName}>kill  !!!!</button>
-    
-
-      
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <button onClick={this.checker}>spawn users</button>
+        <>
+          {this.state.users.map(user => {
+          const {name, id} = user;
+          return <p key={id}>{name}</p>
+          })}
+        </>
+        <button onClick={this.removeRandomeUser}>KILL USER</button>
+      </div>
+    )
+  }
 }
 
-
-
-
-
-export default App;
- const users =  [
+  
+const greatUsers =[
   {name:"atuka",id: 1,},
   {name: "ilia",id: 2,},
   {name:"petre",id: 3,},
@@ -55,21 +56,13 @@ export default App;
  ]
 
 
- const generateUsers = (array) => {
-  return array.map(users =>{
-    const {name,id} = users
-    return (<p key={id}>{name}</p>)
-  })
-} 
 
 
-const getRandomItems = (users) => {
-if (users.length > 0){
-  const rand =  Math.floor(Math.random()* users.length);
-  users.splice(rand,1)
-}
-}
 
+
+
+
+ 
 
 
 
