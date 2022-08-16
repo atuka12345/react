@@ -9,14 +9,10 @@ export default class App extends Component {
       users: []
     }
   }
-  
-  checker = () => {
-    this.setState({showUsersList: true})
-    this.setState({users: greatUsers})
-    console.log(this.state.showUsersList)
+  componentDidUpdate() {
+    if(this.state.users.length > 0) document.title= `${this.state.users.length} users left`
   }
-
-  removeRandomeUser = () => {
+kill = () => {
       this.setState( (sum) => {
         console.log(greatUsers.name,'died'  )
         const randomIndex = Math.floor(Math.random() * sum.users.length)
@@ -24,18 +20,25 @@ export default class App extends Component {
         return {users: usersArray }
       })
   }
+  sum = () => {
+    this.setState({showUsersList: true})
+    this.setState({users: greatUsers})
+    console.log(this.state.showUsersList)
+  }
+
+  
 
   render() {
     return (
       <div>
-        <button onClick={this.checker}>spawn users</button>
+        <button onClick={this.sum}>spawn people</button>
         <>
           {this.state.users.map(user => {
           const {name, id} = user;
           return <p key={id}>{name}</p>
           })}
         </>
-        <button onClick={this.removeRandomeUser}>KILL USER</button>
+        <button onClick={this.kill}>KILL</button>
       </div>
     )
   }
@@ -56,7 +59,7 @@ const greatUsers =[
  ]
 
 
-
+// meore davaleba ver movaswari
 
 
 
