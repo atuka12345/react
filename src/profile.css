@@ -1,0 +1,37 @@
+.profile{
+    left: 80px;
+  top: 20px;
+}
+.icard{
+    margin-left: 250px;
+    margin-top: 30px;
+    border: 20px;
+    box-shadow: 0 4px 20px 0 grey ;
+   height: 500px;
+   width: 900px; 
+   border-radius: 25px;
+   background-color: #d9b310
+}
+.magla{
+    top: 1px;
+   
+   width: 750px;
+}
+
+.dabla{
+    top: 3px;
+}
+
+h1{
+    text-align: center;
+  margin-top: 1px;
+}
+.h3{
+    margin-top: 1px;
+    text-align: center;
+}
+.nor{
+    text-align: center;
+    
+}
+
