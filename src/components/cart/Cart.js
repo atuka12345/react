@@ -25,10 +25,7 @@ const Cart = () => {
             }}
             disabled={!cart.length}
             variant="contained"
-            style={{
-              borderRadius: "0 0 35px 35px",
-              backgroundColor: "rgb(110, 2, 240)",
-            }}
+            
           >
             Save cart
           </Button>
