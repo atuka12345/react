@@ -4,10 +4,7 @@ import { useLocation } from 'react-router-dom'
 import useAxios from '../../APP/hooks/axios'
 import { useUserContext } from '../../context/userContext'
 import '../../profile.css'
-// import Avatar from "@mui/material/Avatar";
-// import { useState } from "react";
-// import { storage } from "./mogodb";
-// import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
 
 const Profile1 = () => {
     const{userData} = useUserContext()

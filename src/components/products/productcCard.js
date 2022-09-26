@@ -1,4 +1,4 @@
-import { Card, CardActions, CardContent, Rating, Typography,Button} from '@mui/material'
+import { Card,  CardContent, Rating, Typography,Button} from '@mui/material'
 import { Link,  } from 'react-router-dom'
 import React, { useState,useEffect } from 'react'
 import { instance } from '../../APP/instance'
@@ -7,6 +7,7 @@ import { useCartContext } from '../../context/Cartcontext'
 import { useProductContext } from '../../context/productcontext'
 import { isUSerAdmin } from '../../APP/util'
 import { useNavigate } from 'react-router-dom'
+import './productcard.css'
 
 const ProductcCard = ({product}) => {
   const [productRating, setProductRating] = useState(product.averageRating);
@@ -39,21 +40,23 @@ const ProductcCard = ({product}) => {
   };
 
   return (
-    <div>
-      <Card
-       
-        variant="outlined"
-      >
-        <CardContent>
-          <Link
+    <div className='div'>
+     
+        <CardContent className='cardc' >
+          <Link 
             to={`/products/categories/${product.category}/${product.name}`}
             state={{ id: product._id, category: product.category }}
           >
+            <img src={product.image} alt="poto" />
+            <br></br>
+            <br></br>
             <Typography variant="h5">{product.name}</Typography>
-            <img src={product.image} width={200} />
-          </Link>
-
+            
+          
+<br></br>
           <Typography variant="h6">${product.price}</Typography>
+          <br></br>
+          </Link>
           <Rating
             value={productRating}
             onChange={onRatingChange}
@@ -63,15 +66,15 @@ const ProductcCard = ({product}) => {
         <div >
           {isProductInCart ? (
             <>
-              <Button onClick={() => addToCart(product)}>+</Button>
-              {isProductInCart.quantity}
-              <Button onClick={() => removeFromCart(product._id)}>-</Button>
+              <button className='buttonio' onClick={() => addToCart(product)}>+</button>
+             <h7>-{isProductInCart.quantity}-</h7> 
+              <button className='buttonioi' onClick={() => removeFromCart(product._id)}>-</button>
             </>
           ) : (
-            <Button onClick={() => addToCart(product)}>Add to cart</Button>
+            <button className='buttoni' onClick={() => addToCart(product)}>Add to cart</button>
           )}
           {isAdmin && (
-            <Button
+            <button className='lon'
               onClick={() => {
                 setIsProductUpdating(true);
                 setSelectedProduct(product);
@@ -79,10 +82,10 @@ const ProductcCard = ({product}) => {
               }}
             >
               Edit
-            </Button>
+            </button>
           )}
         </div>
-      </Card>
+      
     </div>
   );
 };

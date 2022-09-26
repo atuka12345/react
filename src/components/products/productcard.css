@@ -1,0 +1,87 @@
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.div{
+    margin-left: 70px;
+    margin-top: 30px;
+    border: 20px;
+    box-shadow: 0 4px 20px 0 grey ;
+   height: 500px;
+   width: 400px; 
+   border-radius: 25px;
+   background-color: white
+}
+.cardc{
+    text-align: center  ;
+}
+.buttoni{
+  margin-left: 100px;
+  cursor:pointer;
+  width: 100px; 
+  height: 35px;
+ outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999
+
+}
+.lon{
+    margin-left: 20px;
+    cursor:pointer;
+    width: 100px; 
+    height: 35px;
+   outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999
+}
+.buttonio{
+    margin-left: 100px;
+    cursor:pointer;
+    width: 50px; 
+    height: 35px;
+   outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999
+}
+.buttonioi{
+    
+    cursor:pointer;
+    width: 50px; 
+    height: 35px;
+   outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999
+}
+.buttonioi:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.buttonio:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.lon:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.buttoni:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

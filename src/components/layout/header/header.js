@@ -38,6 +38,7 @@ state:{id: userData._id}
             <Link to="/Homepage" onClick={logout}>logout </Link>
 
             <Link to="/cart">Cart</Link>
+            <Link to="/products/new">add product</Link>
             </>
              )}
 

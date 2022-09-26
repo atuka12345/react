@@ -9,10 +9,11 @@ const Singleproduct = () => {
     console.log("location",location)
   return (
     <div>
+      <img src={data.product?.image} />
       <h1>{data.product?.name}</h1>
       <p>{data.product?.description}</p>
       <div>
-        <img src={data.product?.image} width={400} />
+        
       </div>
     </div>
   )

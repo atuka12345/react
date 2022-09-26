@@ -11,39 +11,39 @@ const generateAddProductFormValues = (selectedProduct) => {
       required: true,
       error: "",
       validateInput: (name) =>
-        name.length > 1 ? null : "name should have at least 2 charachter",
+        name.length > 3 ? null : "name should have at least 4 charachter",
     },
     description: {
       value: selectedProduct?.description || "",
       required: true,
       error: "",
       validateInput: (description) =>
-        description.length > 1
+        description.length > 7
           ? null
-          : "description should have at least 2 charachter",
+          : "description should have at least 8 charachter",
     },
     category: {
       value: selectedProduct?.category || "",
       required: true,
       error: "",
       validateInput: (category) =>
-        category.length > 1
+        category.length > 4
           ? null
-          : "category should have at least 2 charachter",
+          : "category should have at least 5 charachter",
     },
     brand: {
       value: selectedProduct?.brand || "",
       required: true,
       error: "",
       validateInput: (brand) =>
-        brand.length > 1 ? null : "brand should have at least 2 charachter",
+        brand.length > 4 ? null : "brand should have at least 5 charachter",
     },
     price: {
       value: selectedProduct?.price || "",
       required: true,
       error: "",
       validateInput: (price) =>
-        price.length > 0 ? null : "price should have at least 2 charachter",
+        price.length > 0 ? null : "price should have at least 1 charachter",
     },
   };
 };
@@ -80,7 +80,7 @@ const ProductForm = () => {
     const category = productFormValues.category.value;
     const brand = productFormValues.brand.value;
     const price = productFormValues.price.value;
-    const image = productFormValues.image;
+  
 
     saveProduct({
       name,
