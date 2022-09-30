@@ -1,9 +1,9 @@
-import { Button, FormControl, TextField } from "@mui/material";
+import {  FormControl, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import useForm from "../../APP/hooks/useForm";
 import FileBase from "react-file-base64";
 import { useProductContext } from "../../context/productcontext";
-
+import "./newproduct.css"
 const generateAddProductFormValues = (selectedProduct) => {
   return {
     name: {
@@ -96,8 +96,13 @@ const ProductForm = () => {
     
   
   return (
-    <FormControl>
-      <TextField
+    <div className="nard">
+      <h1 className='h10'>
+        new product
+        </h1> 
+        <hr></hr>
+    <FormControl className="add">
+      <TextField 
         name="name"
         value={productFormValues.name.value}
         onChange={onInputChange}
@@ -151,10 +156,11 @@ const ProductForm = () => {
         onDone={({ base64 }) => setImage(base64)}
       />
 
-      <Button disabled={isButtonDisabled} onClick={saveProductHandler}>
+      <button className='bito' disabled={isButtonDisabled} onClick={saveProductHandler}>
         Save
-      </Button>
+      </button>
     </FormControl>
+    </div>
   );
 };
 

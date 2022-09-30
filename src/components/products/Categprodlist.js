@@ -26,7 +26,7 @@ const Categprodlist = () => {
         <MenuItem value={"name,asc"}>A-Z</MenuItem>
         <MenuItem value={"name,desc"}>Z-A</MenuItem>
       </Select>
-        <Grid container spacing={2}>
+        <Grid >
         {data.products?.length > 0 &&
           data.products.map((product) => {
             return (
@@ -43,10 +43,5 @@ const Categprodlist = () => {
 }
 
 export default Categprodlist
-const Wrapper = ({ isLoading, isError, children }) => {
-    if (isLoading) {
-      return <h1>Loading</h1>;
-    }
-    return children;
-  };
+
   

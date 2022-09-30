@@ -1,4 +1,4 @@
-import { Card,  CardContent, Rating, Typography,Button} from '@mui/material'
+import {   CardContent, Rating} from '@mui/material'
 import { Link,  } from 'react-router-dom'
 import React, { useState,useEffect } from 'react'
 import { instance } from '../../APP/instance'
@@ -42,48 +42,54 @@ const ProductcCard = ({product}) => {
   return (
     <div className='div'>
      
-        <CardContent className='cardc' >
+        <CardContent  >
           <Link 
             to={`/products/categories/${product.category}/${product.name}`}
             state={{ id: product._id, category: product.category }}
-          >
-            <img src={product.image} alt="poto" />
-            <br></br>
-            <br></br>
-            <Typography variant="h5">{product.name}</Typography>
-            
-          
-<br></br>
-          <Typography variant="h6">${product.price}</Typography>
-          <br></br>
+          ><br></br>
+            <h1 className='h1'>{product.name}</h1>
+            <h3 className='h3'> ${product.price}</h3>
+            <div className='kai'> 
+            <img src={product.image} alt="no_photo" />
+             </div>
           </Link>
-          <Rating
+          <div className='rate'>
+          <Rating 
             value={productRating}
             onChange={onRatingChange}
             precision={0.5}
-          />
-        </CardContent>
-        <div >
-          {isProductInCart ? (
+            
+         
+         />
+
+         </div>
+
+         <br></br>
+{isProductInCart ? (
             <>
               <button className='buttonio' onClick={() => addToCart(product)}>+</button>
-             <h7>-{isProductInCart.quantity}-</h7> 
+             <h7>{isProductInCart.quantity}</h7> 
               <button className='buttonioi' onClick={() => removeFromCart(product._id)}>-</button>
             </>
           ) : (
             <button className='buttoni' onClick={() => addToCart(product)}>Add to cart</button>
           )}
-          {isAdmin && (
+           {isAdmin && (
             <button className='lon'
               onClick={() => {
-                setIsProductUpdating(true);
-                setSelectedProduct(product);
-                navigate(`/products/${product._id}/edit`);
+                setIsProductUpdating(true)
+                setSelectedProduct(product)
+                navigate(`/products/${product._id}/edit`)
               }}
             >
               Edit
             </button>
           )}
+
+          
+        </CardContent>
+        <div >
+          
         </div>
       
     </div>
